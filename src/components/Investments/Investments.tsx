@@ -5,12 +5,12 @@ import { getReportsByInvestmentId } from '../../utils';
 const Investments = ({ investments, reports }: InvestmentsProps) => {
   return (
     <div>
-      <h1>Meus Investimentos</h1>
+      <h1 style={{ textAlign: 'center' }}>Meus Investimentos</h1>
       {investments.map(investment => (
-        <div key={investment.id}>
-          <h2>{investment.description}</h2>
+        <section key={investment.id}>
+          <h2 style={{ textAlign: 'center' }}>{investment.description}</h2>
           <Reports reports={getReportsByInvestmentId(reports, investment.id)} />
-        </div>
+        </section>
       ))}
     </div>
   );
